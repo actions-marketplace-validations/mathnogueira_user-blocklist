@@ -9,7 +9,7 @@ branding:
   color: 'blue'
 
 inputs:
-  BLOCKED_USERS:
+  blocked_users:
     description: List of users that cannot do operation
     required: true
 

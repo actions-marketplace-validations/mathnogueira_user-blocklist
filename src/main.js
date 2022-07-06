@@ -3,7 +3,6 @@ const {context} = require('@actions/github');
 
 async function run() {
   try {
-    core.debug(context);
     const blockedUsers = core.getInput('blocked_users');
     const {actor} = context || {};
 
