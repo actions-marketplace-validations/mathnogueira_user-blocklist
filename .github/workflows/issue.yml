@@ -17,8 +17,7 @@ jobs:
           blocked_users: mathnogueira
       - name: result
         run: |
-          echo $ACTOR
-          echo $RESULT
+          echo "$ACTOR $RESULT"
         env:
           ACTOR: ${{ github.actor }}
           RESULT: ${{ steps.is_team_member.outputs.result }}
