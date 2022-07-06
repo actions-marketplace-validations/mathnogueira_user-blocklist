@@ -1,19 +1,16 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
-const { Octokit } = require('@octokit/rest');
+const {context} = require('@actions/github');
 
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.debug(`Waiting ${ms} milliseconds ...`); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
+    core.debug(context);
+    const blockedUsers = core.getInput('blocked_users');
+    const {actor} = context || {};
 
-    core.debug(new Date().toTimeString());
-    await new Promise(resolve => {
-      setTimeout(() => resolve('done!'), 10);
-    });
-    core.debug(new Date().toTimeString());
+    const blockedUsersList = blockedUsers.split(',').map(user => user.trim());
+    const userIsBlocked = blockedUserList.contains(actor)
 
-    core.setOutput('time', new Date().toTimeString());
+    core.setOutput('result', userIsBlocked ? "true" : "false");
   } catch (error) {
     core.setFailed(error.message);
   }

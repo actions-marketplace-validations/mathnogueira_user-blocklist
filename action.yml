@@ -9,14 +9,13 @@ branding:
   color: 'blue'
 
 inputs:
-  GITHUB_TOKEN:
-    description: Secret GitHub API token to use for making API requests.
-    default: ${{ github.token }}
+  BLOCKED_USERS:
+    description: List of users that cannot do operation
     required: true
 
-#outputs:
-#  result:
-#    description: action result
+outputs:
+ result:
+   description: true if user can do operation, false otherwise
 
 runs:
   using: 'node12'
