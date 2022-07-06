@@ -15,13 +15,10 @@ jobs:
         uses: mathnogueira/user-blocklist@0.1.1
         with:
           blocked_users: mathnogueira
-      - name: it is team member
-        if: steps.is_team_member.outputs.result == true
-        run: echo $ACTOR
+      - name: result
+        run: |
+          echo $ACTOR
+          echo $RESULT
         env:
           ACTOR: ${{ github.actor }}
-      - name: it is not team member
-        if: steps.is_team_member.outputs.result == false
-        run: echo $ACTOR
-        env:
-          ACTOR: ${{ github.actor }}
+          RESULT: ${{ steps.is_team_member.outputs.result }}
