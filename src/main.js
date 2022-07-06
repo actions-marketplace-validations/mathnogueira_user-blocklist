@@ -8,7 +8,7 @@ async function run() {
     const {actor} = context || {};
 
     const blockedUsersList = blockedUsers.split(',').map(user => user.trim());
-    const userIsBlocked = blockedUserList.contains(actor)
+    const userIsBlocked = blockedUsersList.contains(actor)
 
     core.setOutput('result', userIsBlocked ? "true" : "false");
   } catch (error) {
