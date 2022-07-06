@@ -12,7 +12,7 @@ jobs:
       - name: Check if it's team member
         id: is_team_member
         if: github.event.action == 'opened'
-        uses: mathnogueira/user-blocklist@0.1.1
+        uses: mathnogueira/user-blocklist@0.1.2
         with:
           blocked_users: mathnogueira
       - name: result
