@@ -7,10 +7,12 @@ async function run() {
     const blockedUsers = core.getInput('blocked_users');
     const {actor} = context || {};
 
-    const blockedUsersList = blockedUsers.split(',').map(user => user.trim());
-    const userIsBlocked = blockedUsersList.includes(actor)
+    console.log(context)
+    console.log(actor)
 
-    core.setOutput('result', userIsBlocked ? "true" : "false");
+    const userIsBlocked = blockedUsers.split(',').map(user => user.trim()).some(user == actor);
+
+    core.setOutput("result", userIsBlocked ? "true" : "false");
   } catch (error) {
     core.setFailed(error.message);
   }
