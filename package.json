@@ -17,9 +17,8 @@
   "author": "xrkffgg",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "@octokit/rest": "^18.0.14"
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3"
   },
   "devDependencies": {
     "@umijs/fabric": "^2.5.6",
