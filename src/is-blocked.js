@@ -18,7 +18,7 @@ function isBlocked(core) {
   const userIsBlocked = blockedUsers
     .split(',')
     .map(user => user.trim())
-    .some(user == actor);
+    .some(user => user == actor);
   core.debug('user is blocked', userIsBlocked);
   core.setOutput('result', userIsBlocked);
 }
