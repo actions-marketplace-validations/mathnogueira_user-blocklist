@@ -14,7 +14,7 @@ jobs:
         if: github.event.action == 'opened'
         uses: mathnogueira/user-blocklist@0.1.9
         with:
-          blocked_users: mathnogueira
+          blocked_users: joe, ken, kim
       - name: result
         run: |
           echo "$ACTOR $RESULT"
